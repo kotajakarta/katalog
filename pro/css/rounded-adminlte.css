@@ -1,0 +1,155 @@
+
+.btn-xs { padding: 0.125rem 0.25rem; font-size: 0.75rem; line-height: 1; border-radius: 0.2rem; }
+       
+/* Custom User Dropdown - Modern Style (existing styles) */
+.navbar-nav > .user-menu > .dropdown-menu {
+    border-radius: 1rem 0 1rem 1rem; border: none; box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+    padding: 0; width: 280px; margin-top: 0.5rem !important; overflow: hidden; 
+}
+.user-menu .user-header-custom {
+    background: linear-gradient(135deg, #007bff 0%, #56ccf2 100%); color: #fff;
+    padding: 1.5rem 1rem; text-align: center; position: relative; border-radius: 1rem 0 0 0; 
+}
+.user-menu .profile-avatar-initials {
+    width: 70px; height: 70px; border-radius: 50%; background-color: rgba(255, 255, 255, 0.3); color: #fff;
+    font-size: 1.8rem; font-weight: bold; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 0.75rem auto; border: 2px solid rgba(255,255,255,0.5);
+}
+.user-menu .user-header-custom p { margin-bottom: 0.25rem; font-size: 1.1rem; font-weight: 500; }
+.user-menu .user-header-custom small { font-size: 0.85rem; opacity: 0.8; }
+.user-menu .dropdown-item-custom-wrapper { padding: 0.75rem 1rem; background-color: #fff; border-radius: 0 0 1rem 1rem; }
+.user-menu .dropdown-item-custom {
+    display: flex; align-items: center; padding: 0.75rem 1rem; margin-bottom: 0.5rem; 
+    border-radius: 0.75rem; color: #495057; background-color: #f8f9fa;
+    transition: background-color 0.2s ease, color 0.2s ease; text-decoration: none;
+}
+.user-menu .dropdown-item-custom:last-child { margin-bottom: 0; }
+.user-menu .dropdown-item-custom i { margin-right: 0.75rem; width: 20px; text-align: center; color: #6c757d; }
+.user-menu .dropdown-item-custom:hover, .user-menu .dropdown-item-custom:focus { background-color: #e9ecef; color: #007bff; }
+.user-menu .dropdown-item-custom:hover i, .user-menu .dropdown-item-custom:focus i { color: #007bff; }
+.user-menu .dropdown-item-custom.logout-item:hover, .user-menu .dropdown-item-custom.logout-item:focus { background-color: #f8d7da; color: #721c24; }
+.user-menu .dropdown-item-custom.logout-item:hover i, .user-menu .dropdown-item-custom.logout-item:focus i { color: #721c24; }
+
+/* START: Custom Sidebar Styling to match image */
+
+body.layout-fixed { 
+    /* 1. Beri warna latar yang akan menjadi warna "ruang kosong" di atas */
+    background-color: #bdbdbd; /* Ganti dengan #f4f6f9 jika Anda lebih suka warna itu */
+     /* 2. Beri jarak atas untuk menghindari konflik dengan warna body */
+     /* margin-top: 0.6rem !important; */
+     padding-top:0.6rem !important; /* Pastikan padding atas juga diatur untuk menghindari konflik */
+}
+.wrapper {
+    /* 3. PASTIKAN TIDAK ADA MARGIN ATAS PADA WRAPPER!
+       Ini adalah langkah paling penting untuk menghindari jarak ganda dan konflik warna. */
+    
+    /* margin-top: 0.6rem; */
+    /* Warna wrapper sekarang bisa diatur agar konsisten atau dihapus jika sama dengan body */
+    background-color: #f0f2f5; 
+   
+}
+
+/* Biarkan aturan CSS Anda yang lain seperti ini */
+.content-wrapper {
+    background-color: #f0f2f5;
+    
+}
+
+.main-sidebar.sidebar-light-primary { background-color: transparent !important; box-shadow: none !important; padding-top: 0rem !important;}
+.main-sidebar .brand-link {
+    background-color: #ffffff; margin-left: 15px; margin-right: 0px; margin-bottom: 10px; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-bottom: none !important; 
+    border-top-left-radius: 20px; border-bottom-left-radius: 20px; 
+    
+}
+.main-sidebar .brand-link .brand-image { margin-left: .5rem; }
+.main-sidebar .brand-link .brand-text { margin-left: .5rem; }
+.main-sidebar .sidebar { 
+    background-color: #ffffff; border-top-left-radius: 20px; border-top-right-radius: 20px; 
+    margin-left: 15px; margin-right: 0px; margin-top: 0; padding: 10px 10px 10px 10px; 
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07); 
+    --brand-link-height: calc(3.5rem + 1px + 10px); 
+    height: calc(90% - var(--brand-link-height)); overflow-y: auto; 
+    bottom: 5rem;
+}
+
+/* User Panel styling adjustments - MODIFIED FOR NEW LAYOUT */
+.main-sidebar .sidebar .user-panel.d-flex { /* Target AdminLTE's .d-flex specifically */
+    padding-top: 0rem !important; /* Adjust top padding if needed */
+    padding-bottom: 0rem !important; 
+    margin-bottom: 0rem !important;  
+    border-bottom: 1px solid #eef0f2; 
+    /* Override AdminLTE's d-flex behavior for row to column */
+    flex-direction: column !important; 
+    /* align-items-center is already set by AdminLTE's class, which is good for column centering */
+}
+.main-sidebar .sidebar .user-panel .image {
+    margin-bottom: 0rem; padding-left: 0.1rem;/* Space between icon and text */
+}
+/* If the icon tag in HTML has 'ml-1', this will neutralize it for centering */
+.main-sidebar .sidebar .user-panel .image i.ml-1 {
+    margin-left: 0 !important;
+}
+.main-sidebar .sidebar .user-panel .info {
+    text-align: center; /* Center the text content within the .info div */
+    width: 100%; /* Ensure info block takes full width to center its content properly */
+}
+.main-sidebar .sidebar .user-panel .info > a.d-block { /* Styling for user name */
+    color: #212529; /* MODIFIED: Dark grey/black for name like in image */
+    font-weight: 600; /* MODIFIED: Bolder text for name */
+    font-size: 0.9rem; /* Reduced font size from previous step */
+}
+.main-sidebar .sidebar .user-panel .info .text-sm.text-muted { /* Styling for user role */
+    color: #6c757d !important; /* MODIFIED: Standard muted grey for role */
+    font-size: 0.78rem !important; /* Slightly reduced font size from previous step */
+    line-height: 1.2; /* Adjust line height if text looks too cramped */
+}
+/* END: User Panel MODIFIED */
+
+
+/* Navigation item styling */
+.main-sidebar .sidebar .nav-sidebar .nav-link p { 
+    font-size: 0.9rem; margin-bottom: 0; 
+}
+.main-sidebar .sidebar .nav-sidebar .nav-item > .nav-link {
+    padding-top: 0.6rem; padding-bottom: 0.6rem; padding-left: 0.4rem; padding-right: 0.1rem;
+}
+.main-sidebar .sidebar .nav-sidebar .nav-item > .nav-link.active { 
+    background-color: #0d6efd !important; color: #fff !important; 
+}
+.main-sidebar .sidebar .nav-sidebar .nav-item > .nav-link.active i {
+    color: #fff !important; 
+}
+.main-sidebar .sidebar .nav-sidebar .nav-link p > .fas.fa-angle-left.right {
+    color: #343a40;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+.main-sidebar .sidebar .nav-header {
+    font-size: 0.75rem; font-weight: 700; color: #6c757d;     
+    padding: 1rem 0.5rem 0.3rem 0.5rem; text-transform: uppercase;
+    letter-spacing: 0.05em; 
+}
+body.sidebar-collapse .main-sidebar:not(.sidebar-no-expand):not(:hover) .brand-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px; /* PAKSA TAMPILKAN brand-image */
+    padding-right: 0;
+    margin-left:15px;
+    
+}
+body.sidebar-collapse .main-sidebar:not(.sidebar-no-expand):not(:hover) .brand-link .brand-image {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    float: none !important;
+    padding-left: 0px;
+}
+body.sidebar-collapse .main-sidebar:not(.sidebar-no-expand):not(:hover) .brand-link .brand-text {
+display: inline !important; /* PAKSA TAMPILKAN brand-text */
+margin-left: 0rem !important; /* Beri jarak dari brand-image jika ada */
+font-size: 0.8rem; /* Kecilkan font jika perlu */
+/* Anda mungkin ingin menyembunyikan brand-text jika terlalu panjang untuk collapsed view: */
+display: none !important; /* Batalkan komentar ini jika hanya ingin icon saat collapsed */
+}
+
