@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  app:
+    build: .  # Build dari Dockerfile di folder yang sama
+    container_name: katalog_web
+    restart: always
+    ports:
+      - "8083:80"
+    volumes:
+      # Mapping source code dari folder root (karena project tidak menggunakan subfolder src)
+      - .:/var/www/html:Z
+     # - /home/aithendi/storage_pool/nos:/var/www/html/uploads:Z
+    networks:
+      - global_net
+
+# Gunakan network yang sama dengan database & tunnel
+networks:
+  global_net:
+    external: true
